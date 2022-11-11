@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit Product</title>
+	<style>
+		td{	text-align:center;}
+	</style>
+</head>
+<body>
+	<div align="center" style="border:2px solid black;margin:auto;max-width:400px;margin-top:100px;border-radius:10px;">
+		<h1>Edit Product</h1>
+		<br/>
+		<form action="#" th:action="@{/save}" th:object="${product}" method="post">
+			<table border="0" cellpadding="10" style="border-collapse:collapse;">
+				<tr>
+					<td>Product ID:</td>
+					<td><input type="text" th:field="*{id}" readonly="readonly" /></td>
+				</tr>			
+				<tr>
+					<td>Product Name:</td>
+					<td><input type="text" th:field="*{name}" /></td>
+				</tr>
+				<tr>
+					<td>Brand:</td>
+					<td><input type="text" th:field="*{brand}" /></td>
+				</tr>				
+				<tr>
+					<td>Made in:</td>
+					<td><input type="text" th:field="*{madein}" /></td>
+				</tr>				
+				<tr>
+					<td>Price:</td>
+					<td><input type="number" th:field="*{price}" step=1000 /></td>
+				</tr>				
+				<tr>
+					<td colspan="2"><button type="submit" style="font-size:20px;cursor:pointer;background:blue;color:white;border-radius:10px;">Save</button></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>
